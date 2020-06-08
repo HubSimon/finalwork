@@ -1,0 +1,6 @@
+<block wx:for="{{tasks}}">
+<van-cell-group>
+<!-- <van-cell title="车牌号：" value="{{item.carID}}" /> -->
+<van-cell title="车牌号" value="{{item.carId}}" size="large" label="{{item.carType}}" />
+</van-cell-group>
+</block>

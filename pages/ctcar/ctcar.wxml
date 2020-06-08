@@ -1,0 +1,19 @@
+<block wx:for="{{tasks}}">
+
+<!-- 改造前 -->
+<!-- <van-cell-group>
+<van-cell title="车牌号" value="{{item.carName}}" size="large" label="{{item.carType}}" />
+</van-cell-group> -->
+<!-- 改造前 -->
+
+<!-- vant改造 -->
+<van-card
+  num="{{item.carName}}"
+  desc="{{item.info}}"
+  title="{{item.carType}}"
+  thumb="{{item.fileIDs}}"
+/>
+
+<!-- vant改造 -->
+
+</block>

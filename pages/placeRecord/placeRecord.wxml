@@ -1,0 +1,12 @@
+<van-notify id="van-notify" />
+<van-dialog id="van-dialog" />
+<block wx:for="{{tasks}}">
+  <van-swipe-cell id="swipe-cell2" right-width="{{ 65 }}" left-width="{{ 65 }}" name="示例" bind:open="onOpen">
+    <view slot="left" class="van-swipe-cell__left" bindtap="finish" >选择</view>
+    <!-- <van-cell-group> -->
+      <van-cell title="{{item.carName}}" value="{{item.placeName}}" size="large" label="{{item.beginTime}}" icon="clock-o" data-id="{{item.carName}}" bindtap="finish"/>
+    <!-- </van-cell-group> -->
+    <view slot="right" class="van-swipe-cell__right">删除记录</view>
+  </van-swipe-cell>
+</block>
+
