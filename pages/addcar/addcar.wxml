@@ -1,0 +1,55 @@
+<form bindsubmit='onSubmit'>
+<!-- vant改造前 -->
+  <!-- <view class = 'text1'><text class = 'text2'>车牌号：</text></view>
+<view class = 'text3'><input name = "title1" class='carId' placeholder='请输入你的车牌号' ></input></view>
+
+  <view><text class = 'text4'>车型名称：</text></view>
+
+<view class = 'text5'><input name = "title2" class='carType' placeholder='请输入你的汽车品牌' ></input></view> -->
+  <!-- vant改造前 -->
+
+ 
+<!-- vant改造 -->
+<van-cell-group>
+  <van-field
+    value="{{ num }}"
+    required
+    label="车牌号"
+    placeholder="请输入车牌号"
+    bind:change="onChangenum"
+  />
+
+  <van-field
+    value="{{ type }}"
+    label="车型"
+    placeholder="请输入车型名称"
+    required
+    bind:change="onChangetype"
+  />
+
+  <van-field
+  value="{{ info }}"
+  rows="2"
+  autosize
+  label="备注"
+  type="textarea"
+  maxlength="50"
+  placeholder="请输入备注（可不填）"
+  show-word-limit
+  bind:change="onChangeinfo"
+/>
+</van-cell-group>
+<van-button icon="photo" type="warning" bindtap='uploadImgHandle'>上传图片</van-button>
+<view>
+ 	<block wx:for="{{tempImg}}" wx:key="{{index}}tmpimg">
+	 	<image src='{{item}}' mode='aspectFill'></image>
+	</block>
+</view>
+<!-- vant改造 -->
+
+
+ <!-- <button form-type='submit' type='primary'>提交</button> -->
+<van-sticky offset-top="{{ 50 }}">
+<van-button type="primary" bindtap='submit' size="large">提交</van-button>
+</van-sticky>
+</form>
